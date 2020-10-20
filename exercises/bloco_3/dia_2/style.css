@@ -1,0 +1,38 @@
+h1 {
+  font-size: 65px;
+  color: orange;
+  font-family: sans-serif;
+}
+
+ul {
+  background-color: yellow;
+}
+
+.change {
+  background-color: green;
+}
+
+p {
+  font-weight: 600;
+  font-size: 3em;
+}
+
+body {
+  font-size: 16px;
+  text-align: center;
+}
+
+#a {
+  background-color: yellow;
+  font-style: italic;
+}
+
+#v {
+  background-color: red;
+  line-height: 1.5em;
+}
+
+#m {
+  background-color: brown;
+  text-decoration: line-through;
+}
