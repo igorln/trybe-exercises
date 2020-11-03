@@ -91,10 +91,19 @@
 
       //7.Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5;
       let img = document.createElement('img');
-      img.className = 'small-image'
+      img.className = 'small-image';
       img.src = "https://picsum.photos/200";
       div3.appendChild(img);
 
+      //8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      let ul = document.createElement('ul');
+      div4.appendChild(ul);
+
+      for (let i = 1; i <= 10; i += 1) {
+        let li = document.createElement('li');
+        li.innerText = i;
+        ul.appendChild(li);
+      }
 
     </script>
   </body>
