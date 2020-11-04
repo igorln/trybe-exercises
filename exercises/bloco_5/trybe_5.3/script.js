@@ -35,7 +35,17 @@ function createDaysOfTheWeek() {
         }
         daysUl.appendChild(diaLista);
     }
-
   }
 
   createDaysOfTheMonth ()
+
+  //Exercício 2:
+  function createFeriado () {
+  let buttonContainer = document.querySelector('.buttons-container');
+  let botao = document.createElement("button");
+  botao.innerText = "Feriados";
+  botao.id = "btn-holiday";
+  buttonContainer.appendChild(botao);
+  }
+
+  createFeriado()
