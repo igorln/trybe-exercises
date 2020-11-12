@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>Exercício 5.4</title>
 
     <style>
@@ -29,20 +29,20 @@
       }
 
       .buttons-container {
-    background-color: #eee;
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-  }
+        background-color: #eee;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
     </style>
   </head>
   <body>
-    <h1 class="title">Exercício 5.4 - Web Storage </h1>
+    <h1 class="title">Exercício 5.4 - Web Storage</h1>
     <div class="main-content">
       <div class="center-content">
         <p>Texto padrão do nosso site</p>
         <p>-----</p>
-        <p>Trybe</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit, urna sit amet tempor volutpat, tortor lectus vestibulum odio, lacinia ullamcorper odio nisl consequat risus. Donec vel leo consequat, tincidunt velit nec, ullamcorper felis. Curabitur vitae metus sed nunc tristique tempor. Etiam quis mi id justo faucibus placerat. Nam ac suscipit lacus, eget commodo libero. Proin a est vitae lorem pharetra laoreet at eget ligula. Pellentesque aliquet ante vitae placerat porta. Fusce at ultricies ipsum. Sed iaculis ante non eleifend rhoncus. Curabitur elementum turpis eget lorem congue, at laoreet quam lacinia. Duis mattis consectetur magna, a dignissim metus cursus id. Donec at dapibus ex, sed tempus lacus. Fusce lobortis dignissim lacus in gravida. Mauris interdum sodales magna nec venenatis. Sed aliquet arcu volutpat, posuere nisi nec, tincidunt magna. Sed sollicitudin, purus ut varius euismod, urna magna molestie sem, eget hendrerit magna tellus ut massa.</p>
       </div>
     </div>
     <div class="buttons-container">
@@ -50,13 +50,73 @@
       <button id="textColor">Cor do texto</button>
       <button id="fontSize">Tamanho da fonte</button>
       <button id="lineDistance">Espaçamento entra as linhas</button>
-      <button id= >Font family</button>
+      <button id="fontFamily">Font family</button>
     </div>
     <script>
+      let backgroundColorButton = document.getElementById("backgroundColor");
+      let textColorButton = document.getElementById("textColor");
+      let fontSizeButton = document.getElementById("fontSize");
+      let lineDistanceButton = document.getElementById("lineDistance");
+      let fontFamilyButton = document.getElementById("fontFamily");
       
+      let bodyTag = document.getElementsByTagName("body")[0];
+      backgroundColorButton.addEventListener("click", function(){
+        if (bodyTag.style.backgroundColor === "green"){
+          bodyTag.style.backgroundColor = "";
+        } else {
+          bodyTag.style.backgroundColor = "green"
+        }
+        localStorage.setItem("backgroundColor", bodyTag.style.backgroundColor);
+      })
 
+      textColorButton.addEventListener("click", function(){
+        if (bodyTag.style.color === "orange"){
+          bodyTag.style.color = "";
+        } else {
+          bodyTag.style.color = "orange";
+        }
+        localStorage.setItem("textColor", bodyTag.style.color);
+      })
 
+      fontSizeButton.addEventListener("click", function(){
+        if (bodyTag.style.fontSize === "30px"){
+          bodyTag.style.fontSize = "18px";
+        } else {
+          bodyTag.style.fontSize = "30px";
+        }
+        localStorage.setItem("fontSize", bodyTag.style.fontSize);
+      })
 
+      lineDistanceButton.addEventListener("click", function(){
+        if (bodyTag.style.lineHeight === "40px"){
+          bodyTag.style.lineHeight = "";
+        } else {
+          bodyTag.style.lineHeight = "40px";
+        }
+        localStorage.setItem("lineHeight", bodyTag.style.lineHeight);
+      })
+
+      fontFamilyButton.addEventListener("click", function(){
+        if (bodyTag.style.fontFamily === "monospace"){
+          bodyTag.style.fontFamily = "";
+        } else {
+          bodyTag.style.fontFamily = "monospace";
+        }
+        localStorage.setItem("fontFamily", bodyTag.style.fontFamily);
+      })
+
+      window.onload = function(){
+        let backgroundColorSaved = localStorage.getItem("backgroundColor");
+        bodyTag.style.backgroundColor = backgroundColorSaved;
+        let colorSaved = localStorage.getItem("textColor");
+        bodyTag.style.color = colorSaved;
+        let fontSizeSaved = localStorage.getItem("fontSize");
+        bodyTag.style.fontSize = fontSizeSaved;
+        let lineHeightSaved = localStorage.getItem("lineHeight");
+        bodyTag.style.lineHeight = lineHeightSaved;
+        let fontFamilySaved = localStorage.getItem("fontFamily");
+        bodyTag.style.fontFamily = fontFamilySaved;      
+      }
     </script>
   </body>
 </html>
