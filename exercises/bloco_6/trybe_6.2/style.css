@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.box {
+    max-width: 377px;
+    margin: auto !important;
+}
+
+textarea, select, label, input {
+    margin-left: 15px;
+}

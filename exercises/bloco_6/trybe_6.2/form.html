@@ -3,51 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="./path/to/just-validate.min.js"></script>
     <title>Cadastro de currículo</title>
 </head>
-<body>
-    <h1>Cadastro de currículo</h1>
-    <form action="" method="GET" enctype="multipart/form-data">
-        <fieldset>
-            <label for="full-name">Nome Completo</label>
+<body class="ml-3">
+    <h1 class="text-center">Cadastro de currículo</h1>
+    <form action="" method="GET" enctype="multipart/form-data" class="text-center">
+        <fieldset class="border rounded shadow box align-middle bg-light">
+            <label for="full-name" class="mt-2">Nome Completo</label>
             <br>
-            <input type="text" name="name" id="full-name" maxlength="40" required>        
+            <input type="text" name="name" id="full-name" maxlength="40" class="rounded" data-validate-field="name" required>        
             <br>
             <br>
             <label for="user-email">Email</label>  
             <br>
-            <input type="text" name="email" id="user-email" maxlength="50" required>
+            <input type="text" name="email" id="user-email" maxlength="50" class="rounded" data-validate-field="email" required>
             <br>
             <br>
             <label for="cpf">CPF</label>  
             <br>
-            <input type="text" name="cpf" id="cpf" maxlength="11" required>
+            <input type="text" name="cpf" id="cpf" maxlength="11" class="rounded" data-validate-field="cpf" required>
             <br>
             <br>
             <label for="address">Endereço</label>  
             <br>
-            <input type="text" name="address" id="address" maxlength="200" required>
+            <input type="text" name="address" id="address" maxlength="200" class="rounded" data-validate-field="address" required>
             <br>
             <br>
             <label for="city">Cidade</label>  
             <br>
-            <input type="text" name="city" id="city" maxlength="28" required>
+            <input type="text" name="city" id="city" maxlength="28" class="rounded" data-validate-field="city" required>
             <br>
             <br>
             <label for="state">Estado</label>
             <br>
-            <select name="states" id="states">
+            <select name="states" id="states" class="btn border-dark">
             </select>
             <br>
             <br>
-            <label for="housing">Moradia:</label>
-            <input type="radio" name="type" id="type1" value="house" required checked>
+            <label for="housing" class="bottom">Moradia:</label>
+            <input type="radio" name="type" id="type1" value="house" data-validate-field="house" required checked>
             <label for="type1">Casa</label>
-            <input type="radio" name="type" id="type2" value="apartment" required>
+            <input type="radio" name="type" id="type2" value="apartment" data-validate-field="house" required>
             <label for="type2">Apartamento</label>            
         </fieldset>
         <br>
-        <fieldset>
+        <fieldset class="border rounded shadow box bg-light">
             <legend>Último emprego</legend>
             <label for="resume">Resumo do currículo</label>
             <br>
@@ -56,46 +61,22 @@
             <br>
             <label for="position">Cargo</label>
             <br>
-            <input type="text" name="postion" id="position" maxlength="40" required>   
+            <input type="text" name="postion" id="position" maxlength="40" class="rounded" data-validate-field="role" required>   
             <br>
             <br>
             <label for="positionDescription">Descrição do cargo</label>
             <br>
-            <input type="text" name="positionDescription" id="positionDescription" maxlength="500" required>
+            <input type="text" name="positionDescription" id="positionDescription" maxlength="500" class="rounded" data-validate-field="positionDescription" required>
             <br>
             <br>
             <label for="dateStart">Data de início</label>
             <br>
-            <input type="text" name="dateStart" id="dateStart" maxlength="10" required placeholder="dd/mm/aaaa">  
+            <input type="text" id="datepicker"  class="mb-3 rounded" data-validate-field="date">  
         </fieldset> 
         <br>
-        <button type="submit">Enviar</button>
-        <input type="reset" name="reset" id="reset">
+        <button type="submit" class="mb-3 btn btn-success">Enviar</button>
+        <input type="reset" name="reset" id="reset" class="mb-3 btn btn-warning" requiered>
     </form>
-    <script>
-    let allStates = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
-    let state = document.getElementById("states");
-    function createState(){
-        for (var i = 0; i < allStates.length; i += 1){
-            let option = document.createElement("option");
-            option.innerHTML = allStates[i];
-            option.value = allStates[i];
-            state.appendChild(option);         
-        }
-    }
-    createState();
-    let dateStart = document.getElementById("dateStart").value;
-    let dateStartHTML = document.getElementById("dateStart");
-    dateStartHTML.addEventListener("mouseout", function (){
-        let day = dateStart.substring(0, 1);
-        let caracter1 = dateStart[2];
-        let month = dateStart.substring(3,4);
-        let caracter2 = dateStart[5];
-        let year = dateStart.substring(6,9);
-        if (day <= 0 || day > 31 || month <= 0 || month > 12 || year < 0 || caracter1 != '/' || caracter2 != '/') {
-            alert('Data inválida')
-        }
-    });
-    </script>
+    <script src="components.js"></script>
 </body>
 </html>
