@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="./path/to/just-validate.min.js"></script>
+    <title>Cadastro de currículo</title>
+</head>
+<body class="ml-3">
+    <h1 class="text-center">Cadastro de currículo</h1>
+    <form action="" method="GET" enctype="multipart/form-data" class="text-center">
+        <fieldset class="border rounded shadow box align-middle bg-light">
+            <label for="full-name" class="mt-2">Nome Completo</label>
+            <br>
+            <input type="text" name="name" id="full-name" maxlength="40" class="rounded" data-validate-field="name" required>        
+            <br>
+            <br>
+            <label for="user-email">Email</label>  
+            <br>
+            <input type="text" name="email" id="user-email" maxlength="50" class="rounded" data-validate-field="email" required>
+            <br>
+            <br>
+            <label for="cpf">CPF</label>  
+            <br>
+            <input type="text" name="cpf" id="cpf" maxlength="11" class="rounded" data-validate-field="cpf" required>
+            <br>
+            <br>
+            <label for="address">Endereço</label>  
+            <br>
+            <input type="text" name="address" id="address" maxlength="200" class="rounded" data-validate-field="address" required>
+            <br>
+            <br>
+            <label for="city">Cidade</label>  
+            <br>
+            <input type="text" name="city" id="city" maxlength="28" class="rounded" data-validate-field="city" required>
+            <br>
+            <br>
+            <label for="state">Estado</label>
+            <br>
+            <select name="states" id="states" class="btn border-dark">
+            </select>
+            <br>
+            <br>
+            <label for="housing" class="bottom">Moradia:</label>
+            <input type="radio" name="type" id="type1" value="house" data-validate-field="house" required checked>
+            <label for="type1">Casa</label>
+            <input type="radio" name="type" id="type2" value="apartment" data-validate-field="house" required>
+            <label for="type2">Apartamento</label>            
+        </fieldset>
+        <br>
+        <fieldset class="border rounded shadow box bg-light">
+            <legend>Último emprego</legend>
+            <label for="resume">Resumo do currículo</label>
+            <br>
+            <textarea name="resume" id="resume" maxlength="1000" required rows="5" cols="35"></textarea>
+            <br>
+            <br>
+            <label for="position">Cargo</label>
+            <br>
+            <input type="text" name="postion" id="position" maxlength="40" class="rounded" data-validate-field="role" required>   
+            <br>
+            <br>
+            <label for="positionDescription">Descrição do cargo</label>
+            <br>
+            <input type="text" name="positionDescription" id="positionDescription" maxlength="500" class="rounded" data-validate-field="positionDescription" required>
+            <br>
+            <br>
+            <label for="dateStart">Data de início</label>
+            <br>
+            <input type="text" id="datepicker"  class="mb-3 rounded" data-validate-field="date">  
+        </fieldset> 
+        <br>
+        <button type="submit" class="mb-3 btn btn-success">Enviar</button>
+        <input type="reset" name="reset" id="reset" class="mb-3 btn btn-warning" requiered>
+    </form>
+    <script src="components.js"></script>
+</body>
+</html>
