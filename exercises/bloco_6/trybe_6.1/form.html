@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de currículo</title>
+</head>
+<body>
+    <h1>Cadastro de currículo</h1>
+    <form action="" method="GET" enctype="multipart/form-data">
+        <fieldset>
+            <label for="full-name">Nome Completo</label>
+            <br>
+            <input type="text" name="name" id="full-name" maxlength="40" required>        
+            <br>
+            <br>
+            <label for="user-email">Email</label>  
+            <br>
+            <input type="text" name="email" id="user-email" maxlength="50" required>
+            <br>
+            <br>
+            <label for="cpf">CPF</label>  
+            <br>
+            <input type="text" name="cpf" id="cpf" maxlength="11" required>
+            <br>
+            <br>
+            <label for="address">Endereço</label>  
+            <br>
+            <input type="text" name="address" id="address" maxlength="200" required>
+            <br>
+            <br>
+            <label for="city">Cidade</label>  
+            <br>
+            <input type="text" name="city" id="city" maxlength="28" required>
+            <br>
+            <br>
+            <label for="state">Estado</label>
+            <br>
+            <select name="states" id="states">
+            </select>
+            <br>
+            <br>
+            <label for="housing">Moradia:</label>
+            <input type="radio" name="type" id="type1" value="house" required checked>
+            <label for="type1">Casa</label>
+            <input type="radio" name="type" id="type2" value="apartment" required>
+            <label for="type2">Apartamento</label>            
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Último emprego</legend>
+            <label for="resume">Resumo do currículo</label>
+            <br>
+            <textarea name="resume" id="resume" maxlength="1000" required rows="5" cols="35"></textarea>
+            <br>
+            <br>
+            <label for="position">Cargo</label>
+            <br>
+            <input type="text" name="postion" id="position" maxlength="40" required>   
+            <br>
+            <br>
+            <label for="positionDescription">Descrição do cargo</label>
+            <br>
+            <input type="text" name="positionDescription" id="positionDescription" maxlength="500" required>
+            <br>
+            <br>
+            <label for="dateStart">Data de início</label>
+            <br>
+            <input type="text" name="dateStart" id="dateStart" maxlength="10" required placeholder="dd/mm/aaaa">  
+        </fieldset> 
+        <br>
+        <button type="submit">Enviar</button>
+        <input type="reset" name="reset" id="reset">
+    </form>
+    <script>
+    let allStates = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+    let state = document.getElementById("states");
+    function createState(){
+        for (var i = 0; i < allStates.length; i += 1){
+            let option = document.createElement("option");
+            option.innerHTML = allStates[i];
+            option.value = allStates[i];
+            state.appendChild(option);         
+        }
+    }
+    createState();
+    let dateStart = document.getElementById("dateStart").value;
+    let dateStartHTML = document.getElementById("dateStart");
+    dateStartHTML.addEventListener("mouseout", function (){
+        let day = dateStart.substring(0, 1);
+        let caracter1 = dateStart[2];
+        let month = dateStart.substring(3,4);
+        let caracter2 = dateStart[5];
+        let year = dateStart.substring(6,9);
+        if (day <= 0 || day > 31 || month <= 0 || month > 12 || year < 0 || caracter1 != '/' || caracter2 != '/') {
+            alert('Data inválida')
+        }
+    });
+    </script>
+</body>
+</html>
