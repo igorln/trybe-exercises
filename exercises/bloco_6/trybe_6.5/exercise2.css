@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    background-color: rgb(255,234,202);
+  }
+  h2{
+    display: flex;
+    justify-content: center;
+  }
+
+@media screen and (max-width: 480px){
+    header p{
+        font-size: 6.7vw;
+        text-align: center;
+        margin-top: 0;
+        padding-top: 6vw;
+        font-weight: bold;
+    }
+    header{
+        background-color: rgb(92,225,244);
+        color: rgb(244,237,70);
+        padding-bottom: 2vw;
+    }
+    nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 0;
+        font-weight: bold;
+    } 
+    nav ul li {
+        list-style-type: none;
+      } 
+    p         
+}
