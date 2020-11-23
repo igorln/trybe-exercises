@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="clickme">Click me</button>
+  <p id="number"></p>
+  <script>
+    const clickButton = document.getElementById("clickme");
+    let num = document.getElementById("number");
+    let clickCount = 0;
+    clickButton.addEventListener("click", () => num.innerText = clickCount += 1)
+  </script>
+</body>
+</html>
