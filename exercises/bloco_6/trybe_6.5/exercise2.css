@@ -1,39 +1,76 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+* , *:before , *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: rgb(255, 234, 202);
+  margin: 0 1.2vw;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  list-style-type: none;
+  font-size: 2.8vw;
+}
+header p {
+  font-size: 6vw;
+  text-align: center;
+  margin: 0;
+  padding-top: 2vw;
+  font-weight: bold;
+}
+header {
+  background-color: rgb(92, 225, 244);
+  color: rgb(244, 237, 70);
+  padding-bottom: 2vw;
+  margin: 0 -1.2vw;
+}
+.aside-one ul li , .aside-two ul li {
+  font-size: 1.8vw;
+  line-height: 3.2vw;
+}
+.aside-one h2 , .aside-two h2 , .main-content h1 {
+  font-size: 3vw;
+}
+h3 {
+  font-size: 2.5vw;
+}
+footer p {
+  font-size: 1.5vw;
+}
+.main-content p {
+  font-size: 1.7vw;
+  line-height: 2.4vw;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 0;
+  font-weight: bold;
+}
+@media screen and (max-width: 480px) {
+  footer {
+    background-color: green;
   }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  body {
-    background-color: rgb(255,234,202);
-  }
-  h2{
-    display: flex;
-    justify-content: center;
-  }
+}
 
-@media screen and (max-width: 480px){
-    header p{
-        font-size: 6.7vw;
-        text-align: center;
-        margin-top: 0;
-        padding-top: 6vw;
-        font-weight: bold;
-    }
-    header{
-        background-color: rgb(92,225,244);
-        color: rgb(244,237,70);
-        padding-bottom: 2vw;
-    }
-    nav ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-left: 0;
-        font-weight: bold;
-    } 
-    nav ul li {
-        list-style-type: none;
-      } 
-    p         
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+  .aside-one ul li,
+  .aside-two ul li {
+    text-align: center;
+    list-style-type: none;
+  }
+}
+
+@media screen and (min-width: 1026px) {
+  .aside-one ul li,
+  .aside-two ul li {
+    text-align: center;
+    list-style-type: none;
+  }
 }
