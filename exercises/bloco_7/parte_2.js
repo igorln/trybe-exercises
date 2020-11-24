@@ -23,4 +23,7 @@ const mudarTurno = (objeto, chave, valor) => objeto[chave] = valor;
 mudarTurno(lesson2, 'turno', 'Manhã');
 
 const listarKeys = objeto => Object.keys(objeto);
-console.log(listarKeys(lesson2))
+
+const tamamanhoObjeto = objeto => listarKeys(objeto).length;
+
+console.log(tamamanhoObjeto(lesson2))
