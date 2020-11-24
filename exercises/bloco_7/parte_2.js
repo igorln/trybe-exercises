@@ -38,8 +38,22 @@ const somarEstudantes = _ => {
   }
   return soma;
 }
-console.log(somarEstudantes())
+console.log(somarEstudantes());
 
-const getValueByNumber = (objeto, posicao) => Object.values(objeto)[posicao]
+const getValueByNumber = (objeto, posicao) => Object.values(objeto)[posicao];
 
-console.log(getValueByNumber(lesson1, 0))
+console.log(getValueByNumber(lesson1, 0));
+
+const verifyPair = (objeto, chave, valor) => {
+  const pares = Object.entries(objeto);
+  for (let index = 0; index < pares.length; index += 1){
+    if (chave === pares[index][0]){
+      if (valor === pares[index][1]) {
+      return true;
+      } else {
+      return false
+      }
+    }
+  }
+};
+console.log(verifyPair(lesson3, 'turno', 'noite'));
