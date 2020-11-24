@@ -36,10 +36,10 @@ const somarEstudantes = _ => {
   for (index in chaves){
     soma += allLessons[chaves[index]].numeroEstudantes;
   }
-  console.log(soma)
+  return soma;
 }
+console.log(somarEstudantes())
 
-somarEstudantes()
-console.log(Object.keys(allLessons))
+const getValueByNumber = (objeto, posicao) => Object.values(objeto)[posicao]
 
-console.log(allLessons.lesson1.numeroEstudantes)
+console.log(getValueByNumber(lesson1, 0))
