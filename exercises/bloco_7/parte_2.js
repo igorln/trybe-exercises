@@ -30,4 +30,16 @@ const valoresObjeto = objeto => Object.values(objeto);
 
 const allLessons = Object.assign({},{lesson1,lesson2,lesson3});
 
-console.log(allLessons)
+const somarEstudantes = _ => {
+  let soma = 0;
+  const chaves = Object.keys(allLessons);
+  for (index in chaves){
+    soma += allLessons[chaves[index]].numeroEstudantes;
+  }
+  console.log(soma)
+}
+
+somarEstudantes()
+console.log(Object.keys(allLessons))
+
+console.log(allLessons.lesson1.numeroEstudantes)
