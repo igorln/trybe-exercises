@@ -57,3 +57,17 @@ const verifyPair = (objeto, chave, valor) => {
   }
 };
 console.log(verifyPair(lesson3, 'turno', 'noite'));
+
+//Bônus
+
+const alunosNaAula = (objeto, classe) => {
+  let soma = 0;
+  const chaves = Object.keys(objeto);
+  for (index in chaves){
+    if (objeto[chaves[index]].materia === classe){
+    soma += objeto[chaves[index]].numeroEstudantes;
+    }
+  }
+  return soma;  
+}
+console.log(alunosNaAula(allLessons, 'Matemática'))
