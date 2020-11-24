@@ -18,12 +18,12 @@ const lesson3 = {
   turno: 'noite',
 };
 
-const mudarTurno = (objeto, chave, valor) => objeto[chave] = valor;
+const addChaveValor = (objeto, chave, valor) => objeto[chave] = valor;
 
-mudarTurno(lesson2, 'turno', 'Manhã');
+addChaveValor(lesson2, 'turno', 'Manhã');
 
 const listarKeys = objeto => Object.keys(objeto);
 
-const tamamanhoObjeto = objeto => listarKeys(objeto).length;
+const tamanhoObjeto = objeto => listarKeys(objeto).length;
 
-console.log(tamamanhoObjeto(lesson2))
+const valoresObjeto = objeto => Object.values(objeto);
