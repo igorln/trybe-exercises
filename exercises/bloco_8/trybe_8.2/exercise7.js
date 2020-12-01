@@ -71,5 +71,4 @@ function authorWith3DotsOnName() {
   return author.name;
 }
 
-
 assert.deepEqual(authorWith3DotsOnName(), expected_result);
