@@ -8,7 +8,7 @@ test('All the letters are uppercase', done =>{
   });
 })
 
-test('All the letters are uppercase', done =>{
+test('The word change', done =>{
   expect.assertions(1);
   uppercase('pokemon', (result) => {
     expect(result).not.toBe('pokemon');
