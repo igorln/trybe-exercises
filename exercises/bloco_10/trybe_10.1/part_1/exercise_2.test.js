@@ -1,9 +1,5 @@
 const myRemove = require('./exercise_2')
 
-test('A função myRemove(arr, item) recebe um array arr e retorna uma cópia desse array sem o elemento item caso ele exista no array', () => {
-  expect(myRemove([1, 2, 3, 4], 2)).toEqual([1, 3, 4]);
-})
-
 test('Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado', () => {
   expect(myRemove([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
 })

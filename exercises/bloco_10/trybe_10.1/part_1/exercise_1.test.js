@@ -1,9 +1,5 @@
 const sum = require('./exercise_1')
 
-test('A função sum(a, b) retorna a soma do parâmetro a com o b', () => {
-  expect(sum(1, 2)).toBe(3);
-})
-
 test('Teste se o retorno de sum(4, 5) é 9', () => {
   expect(sum(4, 5)).toBe(9);
 })
